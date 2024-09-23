@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="CapsuleShape3D" id=1]
+
+[sub_resource type="CapsuleMesh" id=2]
+
+[sub_resource type="StandardMaterial3D" id=3]
+albedo_color = Color( 0.52549, 1, 0.392157, 1 )
+
+[node name="Node3D" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, -0.0117807, 0.999931, 0, -0.999931, -0.0117807, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, -0.0117807, 0.999931, 0, -0.999931, -0.0117807, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.83629, 5.88392 )
+current = true
+fov = 79.5

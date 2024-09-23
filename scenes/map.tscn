@@ -1,0 +1,144 @@
+[gd_scene load_steps=7 format=3 uid="uid://by1ltf0elv816"]
+
+[sub_resource type="QuadMesh" id="1"]
+
+[sub_resource type="BoxShape3D" id="4"]
+size = Vector3(0.208162, 0.189429, 0.002)
+
+[sub_resource type="PlaneMesh" id="6"]
+
+[sub_resource type="BoxShape3D" id="11"]
+size = Vector3(0.002, 43.7624, 74.0112)
+
+[sub_resource type="BoxShape3D" id="10"]
+size = Vector3(2, 0.002, 2)
+
+[sub_resource type="BoxShape3D" id="12"]
+size = Vector3(74.527, 65.2298, 0.002)
+
+[node name="map" type="Node3D"]
+
+[node name="ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1000, 0, 0, 0, -4.37114e-05, 5, 0, -1000, -2.18557e-07, 1.67239, 0, 6.45022)
+mesh = SubResource("1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 7.10543e-14, 0, -7.10543e-14, 10, 0, 5.58794e-09, -0.276888)
+shape = SubResource("4")
+
+[node name="prawo" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 8.3519e-23, -3.55271e-15, 1, 2.11758e-22, -3.55271e-15, 2.11758e-22, 1, 0, -9.53674e-07, 0)
+
+[node name="MeshInstance3" type="MeshInstance3D" parent="prawo"]
+transform = Transform3D(-1.74846e-06, 0, -8.74228e-07, 2.25855e-21, 0, -20, -40, 0, 3.82137e-14, -41.3926, 11.4715, -9.81039)
+mesh = SubResource("6")
+skeleton = NodePath("../../RYNEK1/MeshInstance2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="prawo"]
+transform = Transform3D(1, 0, 0, 7.52316e-37, 1, 0, 0, 0, 1, -40.5966, 10.2898, -13.1011)
+shape = SubResource("11")
+
+[node name="RYNEK1" type="StaticBody3D" parent="."]
+transform = Transform3D(-1.74846e-06, -15, 8.74228e-07, 0, -6.55671e-07, -20, 40, -6.55671e-07, 3.82137e-14, 11.3747, 13.4326, -55.1372)
+
+[node name="MeshInstance2" type="MeshInstance3D" parent="RYNEK1"]
+transform = Transform3D(1, 0, -1.05879e-22, -7.10543e-15, 1, 7.10543e-15, 0, -6.26392e-23, 1, 0, 0, 0)
+mesh = SubResource("6")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RYNEK1"]
+transform = Transform3D(1, 0, -1.05879e-22, -7.10543e-15, 1, 7.10543e-15, 0, -6.26392e-23, 1, 0, 0, 0)
+shape = SubResource("10")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.132395, -0.991197, 0, 0.991197, 0.132395, 2.82701, -2.33879, 8.32378)
+light_energy = 0.363
+
+[node name="ground2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1000, 0, 0, 0, -4.37114e-05, -100, 0, 1000, -4.37114e-06, 0, 31.3098, 0)
+mesh = SubResource("1")
+skeleton = NodePath("../ground")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground2/StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 7.10543e-14, 0, -7.10543e-14, 10, 0, 5.58794e-09, -0.276888)
+shape = SubResource("4")
+
+[node name="car" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67262, 3.72735, -69.7122)
+script = null
+
+[node name="Camera3D" type="Camera3D" parent="car"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.004179, 3.35895, -14.0227)
+current = true
+far = 368.9
+
+[node name="tacho" parent="car"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+visible = false
+script = null
+
+[node name="przod" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.325424)
+
+[node name="MeshInstance4" type="MeshInstance3D" parent="przod"]
+transform = Transform3D(-39.9977, -1.51281e-06, -0.212386, 0.424771, -5.36327e-07, -19.9989, 6.02811e-06, -10, 1.10472e-06, -3.39055, 12.6851, 28.5092)
+mesh = SubResource("6")
+skeleton = NodePath("../../RYNEK1/MeshInstance2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="przod"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28.8155)
+shape = SubResource("12")
+
+[node name="RYNEK2" type="StaticBody3D" parent="."]
+transform = Transform3D(40, 0, 8.74228e-07, 1.74846e-06, 3.82137e-15, -20, 0, 2, 3.82137e-14, 50.8305, 13.5319, -14.8816)
+
+[node name="MeshInstance2" type="MeshInstance3D" parent="RYNEK2"]
+transform = Transform3D(1, 0, -1.05879e-22, -7.10543e-15, 1, 7.10543e-15, 0, -6.26392e-23, 1, 0, 0, 0)
+mesh = SubResource("6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RYNEK2"]
+transform = Transform3D(1, 0, -1.05879e-22, -7.10543e-15, 1, 7.10543e-15, 0, -6.26392e-23, 1, 0, 0, 0)
+shape = SubResource("10")
+
+[node name="RYNEK3" type="StaticBody3D" parent="."]
+transform = Transform3D(-40, -1.74846e-07, 7.64274e-14, 0, -8.74228e-08, -20, 3.49691e-06, -2, 8.74228e-07, 50.8305, 13.5319, -94.4032)
+
+[node name="MeshInstance2" type="MeshInstance3D" parent="RYNEK3"]
+transform = Transform3D(1, 0, -1.05879e-22, -7.10543e-15, 1, 7.10543e-15, 0, -6.26392e-23, 1, 0, 0, 0)
+mesh = SubResource("6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RYNEK3"]
+transform = Transform3D(1, 0, -1.05879e-22, -7.10543e-15, 1, 7.10543e-15, 0, -6.26392e-23, 1, 0, 0, 0)
+shape = SubResource("10")
+
+[node name="RYNEK4" type="StaticBody3D" parent="."]
+transform = Transform3D(-1.74846e-06, 2, 0, 1.74846e-06, 3.82137e-15, -20, -40, -8.74228e-08, -8.74228e-07, 90.13, 13.4891, -55.0197)
+
+[node name="MeshInstance2" type="MeshInstance3D" parent="RYNEK4"]
+transform = Transform3D(1, 0, -1.05879e-22, -7.10543e-15, 1, 7.10543e-15, 0, -6.26392e-23, 1, 0, 0, 0)
+mesh = SubResource("6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RYNEK4"]
+transform = Transform3D(1, 0, -1.05879e-22, -7.10543e-15, 1, 7.10543e-15, 0, -6.26392e-23, 1, 0, 0, 0)
+shape = SubResource("10")
